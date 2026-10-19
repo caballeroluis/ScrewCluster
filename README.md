@@ -2,94 +2,87 @@
 
 **Open-source computer vision for grouping visually similar screws by colour.**
 
-*Smarter sorting. Faster repairs.*
+*Simpler sorting. Faster repairs.*
 
 ![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge&logo=gnu&logoColor=white)
-![Status](https://img.shields.io/badge/status-early%20stage-orange?style=for-the-badge)
+![Status: Early stage](https://img.shields.io/badge/status-early%20stage-orange?style=for-the-badge)
 
-ScrewCluster is an early-stage open-source project exploring how computer vision could help organise mixed screws during electronics repair.
+ScrewCluster is an early-stage open-source project exploring how computer vision could help find visually similar screws in mixed collections during electronic repairs.
 
-The idea is simple: **group visually similar screws and assign a different colour to each group**, making them easier to distinguish during repairs.
+The idea is simple: group visually similar screws and assign a different colour to each group, making it easier to identify potential matches when looking for a replacement screw.
 
-The goal is not to identify screw types, assign names or determine where screws belong. It's simply about finding visual similarities.
+The goal is not to identify screw types, assign names to them, or determine where they belong. It is simply about finding visual similarities.
 
-> **Project status:** Early concept. No working prototype yet.
+> **Project status:** Initial concept. No working prototype exists yet.
 
 ## The problem
 
-During electronics repair, small screws can easily get mixed together. Many have similar shapes and sizes, and even under a microscope, distinguishing them can be surprisingly difficult.
+Many devices contain different types of screws. Sometimes the same screwdriver is used for every screw in a device, but the screws themselves can vary considerably in length, thread or head shape. When one goes missing, the real challenge is finding a similar replacement, as you may need to consult the documentation for the exact phone model, component and screw position.
 
-Comparing them one by one takes time, especially when working with a large collection of tiny screws.
+<img width="1280" alt="Screws and repair components on a blue repair mat" src="https://github.com/user-attachments/assets/1eb79058-ee5b-4221-83eb-1dec386eee46" />
 
-Could computer vision help organise them automatically?
+*Photo 1: The repair bench. Screws can look alike at first glance, even when they are not identical.*
 
-![TODO: Replace this link with a photo of mixed electronics-repair screws.]( )
+If you lose a screw during a repair, you might ask a colleague to lend you another screw from the same position in an identical device. Using that screw as a reference, you can search for a similar one in your box. The problem is that telling them apart can be extremely difficult, even under a microscope.
 
-*Mixed screws from electronics repair, showing the challenge of distinguishing similar-looking screw heads.*
+Many screws look almost identical to the naked eye, and comparing them one by one can be frustrating, especially when searching through a box full of mixed screws like this one, commonly found in repair shops:
 
-### Screw head and drive variations
+<img width="1280" alt="A box containing a large collection of mixed screws" src="https://github.com/user-attachments/assets/8fccadc0-d145-4978-85df-4558c1f26932" />
 
-The shape of a screw head and its drive profile can provide useful visual clues. However, different designs can look remarkably similar, and distinguishing them is not always easy, even under magnification.
+*Photo 2: The screw box. Finding a visually similar part in a mixed collection can take time.*
 
-<p align="center">
-  <img
-    src="https://commons.wikimedia.org/wiki/Special:FilePath/Screw_drive_types_3.svg"
-    alt="Reference chart of screw drive types"
-    width="200"
-  />
-</p>
+What if you could see similar screws grouped by colour, making potential matches easier to spot?
 
 ## The idea
 
-Imagine placing a collection of screws under a microscope connected to a monitor.
+Imagine examining a collection of mixed screws through a digital microscope connected to a monitor. ScrewCluster would explore how to:
 
-ScrewCluster would explore how to:
+- Detect individual screws in an image.
+- Compare their visual appearance.
+- Group visually similar screws.
+- Highlight each group with a different colour.
 
-1. Detect individual screws in an image.
-2. Compare their visual appearance.
-3. Group visually similar screws.
-4. Highlight each group with a different colour.
+<img width="1195" alt="Individual screws viewed through a digital microscope with coloured outlines" src="https://github.com/user-attachments/assets/9ca2f8e6-5aa4-44cb-80c6-dcbf913c41fb" />
 
-![TODO: Replace this link with a concept mockup showing screws grouped by different colours.]( )
+*Photo 3: A microscope view illustrating how coloured outlines could distinguish individual screws and visual groups. This is a conceptual illustration, not a result from a working ScrewCluster implementation.*
 
-*Concept illustration of colour-coded screw groups. This is not a working software result.*
+## The solution
 
-### Grouping, not identification
+The key idea is to use a **known screw as a visual reference**.
 
-ScrewCluster does not need to know what type of screw it sees.
+Imagine you have lost a screw and a colleague lends you one that looks identical. You place that reference screw under a digital microscope alongside the mixed screw collection. ScrewCluster would explore how to highlight visually similar screws using the same colour.
 
-- Visually similar screws would share the same colour.
-- Visually different screws would belong to different groups.
-- A screw with no sufficiently similar counterparts could form a group of its own.
+The goal is to make potential matches stand out, so you can find them without testing every screw in the phone through trial and error.
 
-**Colours represent visual groups, not screw types or compatibility.**
+- **Use a reference:** place the borrowed screw under the microscope.
+- **Find visual matches:** dynamically compare it with the screws in the collection.
+- **Highlight similar screws:** assign the same colour to the reference screw and its potential visual matches.
+- **Distinguish other screws:** use different colours for visually distinct groups.
 
-Two screws that look alike are not necessarily interchangeable. Their suitability must still be checked by the technician.
+ScrewCluster would not need to identify a screw by name or know which device it came from. Its purpose would be to group screws according to their visual appearance. If a new screw appears in the image, the system would explore how to assign it a colour automatically based on its similarity to the others, making it easier to find a similar part.
 
-## Contributions welcome
+## Possible interfaces
 
-The project is at an early stage, and I'd love to hear from people interested in exploring the problem.
+- **Mobile device:** a phone could photograph a collection of screws and display proposed groups using coloured overlays in an app.
+- **PC connected to a digital microscope:** a microscope connected to a computer could display a magnified view of the collection in real time, highlighting visually similar screws with different colours.
 
-- **Computer vision enthusiasts:** How would you approach visual similarity grouping?
-- **AI and machine learning developers:** What techniques might be worth exploring?
-- **Electronics repair technicians:** Would colour-coded screw groups be useful at the workbench?
-- **Open-source contributors:** Help explore ideas, test approaches and share feedback.
+*These are possible directions to explore, not implemented features.*
 
-Have an idea? Feel free to [open an issue](https://github.com/caballeroluis/ScrewCluster/issues).
+## Looking for collaborators
 
-## Current status
+The project is at an early stage, and I would like to hear from people interested in exploring this problem:
 
-- [ ] Collect photos of mixed repair screws.
-- [ ] Experiment with detecting individual screws.
-- [ ] Explore ways to group visually similar screws.
-- [ ] Display the groups using colour overlays.
+- **Computer vision enthusiasts:** How would you approach visual similarity grouping and feature extraction?
+- **AI and machine learning developers:** Which techniques and embeddings would be worth exploring?
+- **Electronics repair technicians:** Would colour-coded groups help you find replacement screws in your day-to-day work?
+- **Open-source contributors:** Help explore ideas, test approaches and share suggestions.
 
-These are initial goals, not implemented features.
+Have an idea? You can [open an issue on GitHub](https://github.com/caballeroluis/ScrewCluster/issues).
 
 ## License
 
-ScrewCluster is released under the [GNU General Public License v3.0](https://github.com/caballeroluis/ScrewCluster/blob/main/LICENSE).
+ScrewCluster is distributed under the GNU General Public License, version 3.0 ([GPL-3.0](https://github.com/caballeroluis/ScrewCluster/blob/main/LICENSE)).
 
 ---
 
-**A simple idea: group similar screws, give each group a colour, and make sorting easier.**
+**A simple idea: group similar screws, assign a colour to each group, and make replacement parts easier to find.**
