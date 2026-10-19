@@ -19,9 +19,9 @@ The goal is not to identify screw types, assign names to them, or determine wher
 
 Many devices contain different types of screws. Sometimes the same screwdriver is used for every screw in a device, but the screws themselves can vary considerably in length, thread or head shape. When one goes missing, the real challenge is finding a similar replacement, as you may need to consult the documentation for the exact phone model, component and screw position.
 
-<img width="1280" alt="Screws and repair components on a blue repair mat" src="https://github.com/user-attachments/assets/1eb79058-ee5b-4221-83eb-1dec386eee46" />
+<img width="1280" height="960" alt="Screws and repair components on a blue repair mat" src="https://github.com/user-attachments/assets/0b570bc2-4f76-4a98-80f3-bf9cece77be0" />
 
-*Photo 1: The repair bench. Screws can look alike at first glance, even when they are not identical.*
+*The repair bench. Screws can look alike at first glance, even when they are not identical.*
 
 If you lose a screw during a repair, you might ask a colleague to lend you another screw from the same position in an identical device. Using that screw as a reference, you can search for a similar one in your box. The problem is that telling them apart can be extremely difficult, even under a microscope.
 
@@ -29,7 +29,7 @@ Many screws look almost identical to the naked eye, and comparing them one by on
 
 <img width="1280" alt="A box containing a large collection of mixed screws" src="https://github.com/user-attachments/assets/8fccadc0-d145-4978-85df-4558c1f26932" />
 
-*Photo 2: The screw box. Finding a visually similar part in a mixed collection can take time.*
+*The screw box. Finding a visually similar part in a mixed collection can take time.*
 
 What if you could see similar screws grouped by colour, making potential matches easier to spot?
 
@@ -44,7 +44,7 @@ Imagine examining a collection of mixed screws through a digital microscope conn
 
 <img width="1195" alt="Individual screws viewed through a digital microscope with coloured outlines" src="https://github.com/user-attachments/assets/9ca2f8e6-5aa4-44cb-80c6-dcbf913c41fb" />
 
-*Photo 3: A microscope view illustrating how coloured outlines could distinguish individual screws and visual groups. This is a conceptual illustration, not a result from a working ScrewCluster implementation.*
+*A microscope view illustrating how coloured outlines could distinguish individual screws and visual groups. This is a conceptual illustration, not a result from a working ScrewCluster implementation.*
 
 ## The solution
 
